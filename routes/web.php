@@ -19,12 +19,15 @@ Route::view('noaccess','noaccess');
 Route::get('/', function () {
             return view('welcome');
         });
-Route::view('home','home');
+// Route::view('home','home');
 
-//making route of group middleware
+//=============making route of group middleware
 // Route::group(['middleware'=>['checkAge']],function(){
 //     Route::get('/', function () {
 //         return view('welcome');
 //     });
 //     Route::view('home','home');
 // });
+
+//======Route MiddleWare for single route========
+Route::view('home','home')->middleware('checkAge');
