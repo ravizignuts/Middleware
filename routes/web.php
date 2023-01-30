@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\checkAge;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,14 @@ Route::get('/', function () {
 //     });
 //     Route::view('home','home');
 // });
+Route::group(['middleware'=>['UnderConstruction']],function(){
+    Route::view('page1','cunstruction.page1');
+    Route::view('page2','cunstruction.page2');
+    Route::view('page3','cunstruction.page3')->withoutMiddleware('UnderConstruction')->middleware('checkAge');
+
+});
 
 //======Route MiddleWare for single route========
 Route::view('home','home')->middleware('checkAge');
+//we can give middleware class name also
+//Route::view('home', 'home')->middleware(checkAge::class);

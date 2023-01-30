@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Closure;
 use Illuminate\Http\Request;
 
-class checkAge
+class UnderConstruction
 {
     /**
      * Handle an incoming request.
@@ -16,11 +16,7 @@ class checkAge
      */
     public function handle(Request $request, Closure $next)
     {
-
-        if($request->age && $request->age<18){
-            // return redirect('noaccess');
-            abort(401);
-        }
-        return $next($request);
+        throw new HttpException(503);
+        // return $next($request);
     }
 }

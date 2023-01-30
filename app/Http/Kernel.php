@@ -49,6 +49,9 @@ class Kernel extends HttpKernel
         // 'checkAge' =>[
         //     \App\Http\Middleware\checkAge::class,
         // ]
+        'UnderConstruction' =>[
+          \App\Http\Middleware\UnderConstruction::class
+        ]
     ];
 
     /**
