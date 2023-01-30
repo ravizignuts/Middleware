@@ -16,11 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('user','user');
 Route::view('noaccess','noaccess');
+Route::get('/', function () {
+            return view('welcome');
+        });
+Route::view('home','home');
 
 //making route of group middleware
-Route::group(['middleware'=>['checkAge']],function(){
-    Route::get('/', function () {
-        return view('welcome');
-    });
-    Route::view('home','home');
-});
+// Route::group(['middleware'=>['checkAge']],function(){
+//     Route::get('/', function () {
+//         return view('welcome');
+//     });
+//     Route::view('home','home');
+// });

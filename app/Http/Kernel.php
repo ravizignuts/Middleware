@@ -15,6 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
+        //=================================Global Middleware===========================
         // \App\Http\Middleware\checkAge::class,//here You can Register global Middleware
         \App\Http\Middleware\TrustProxies::class,
         \Illuminate\Http\Middleware\HandleCors::class,
@@ -44,10 +45,10 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-        //For Register Group middleware
-        'checkAge' =>[
-            \App\Http\Middleware\checkAge::class,
-        ]
+        //For Register =====================Group middleware======================
+        // 'checkAge' =>[
+        //     \App\Http\Middleware\checkAge::class,
+        // ]
     ];
 
     /**
