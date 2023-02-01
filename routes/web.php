@@ -19,7 +19,7 @@ Route::view('user','user');
 Route::view('noaccess','noaccess');
 Route::get('/', function () {
             return view('welcome');
-        });
+        })->middleware('checkAge');
 // Route::view('home','home');
 
 //=============making route of group middleware
